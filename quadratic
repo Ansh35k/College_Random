@@ -1,0 +1,16 @@
+#Program to find roots of a quadratic equation ax^2+bx+c=0
+print("For the Quadratic equation ax2+bx+c=0 enter the value of a,b,c")
+a=eval(input("Enter the coefficient of x2, a:"))
+b=eval(input("Enter the coefficient of x, b:"))
+c=eval(input("Enter the value of c:"))
+x=(b**2)-(4*a*c)
+if x>0:
+  d=(-b+((b**2)-(4*a*c))**0.5)/(2*a)
+  e=(-b-((b**2)-(4*a*c))**0.5)/(2*a)
+  print("The Two roots of the quadratic equation are:",d,e)
+elif x==0:
+  d=(-b+((b**2)-(4*a*c))**0.5)/(2*a)
+  e=(-b-((b**2)-(4*a*c))**0.5)/(2*a)
+  print("The Two roots of the quadratic equation are:",d,e)
+else:
+  print("No real roots")
