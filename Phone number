@@ -1,0 +1,22 @@
+def initial_db():
+  return {}
+def add_entry(database,name,number):
+  database[name]=number
+  print(f"Added {name}'s Phone number:{number}")
+def remove(database,name):
+  if name in database:
+    del database[name]
+    print(f"Removed {name}'s from the database")
+  else:
+    print("number not found")
+def display(database):
+  print("Phone numbers in database")
+  for name,number in database.items():
+    print(f"{name}:{number}")
+
+phone_numbers=initial_db()
+add_entry(phone_numbers,"Ansh","23070127049")
+add_entry(phone_numbers,"Ayush","123456789")
+display(phone_numbers)
+remove(phone_numbers,"Ansh")
+display(phone_numbers)
