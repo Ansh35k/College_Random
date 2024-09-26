@@ -1,0 +1,47 @@
+class Car:
+    def __init__(self, make, model, year, price):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.price = price
+        self.available = True
+
+    def display_details(self):
+        print(f"{self.year} {self.make} {self.model} - ${self.price}")
+
+class Customer:
+    def __init__(self, name, contact_info, budget):
+        self.name = name
+        self.contact_info = contact_info
+        self.budget = budget
+
+    def display_info(self):
+        print(f"Customer: {self.name}, Contact: {self.contact_info}, Budget: ${self.budget}")
+
+class SalesTransaction:
+    def __init__(self, date, car, customer):
+        self.date = date
+        self.car = car
+        self.customer = customer
+        self.price = 0
+
+    def process_sale(self):
+        if self.car.available and self.customer.budget >= self.car.price:
+            self.car.available = False
+            self.price = self.car.price
+            print(f"Sale successful! {self.customer.name} purchased a {self.car.year} {self.car.make} {self.car.model} for ${self.price}")
+        else:
+            print("Sale unsuccessful. Car not available or customer cannot afford it.")
+
+# Example of Usage:
+car1 = Car("Toyota", "Prado", 2023, 100000)
+car2 = Car("Hyundai", "Alcazar", 2023,250000)
+
+customer1 = Customer("Sai Ansh", "9947607720", 10000000)
+customer2 = Customer("Ayush", "1234567890", 20000)
+
+sales_transaction = SalesTransaction("2023-9-10", car1, customer1)
+sales_transaction.process_sale()
+
+car1.display_details()
+customer1.display_info()
